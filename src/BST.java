@@ -23,7 +23,6 @@ public class BST<T extends Comparable<T>> extends BinaryTree<T> {
         this.comparisonCount = 0;
     }
 
-    @Override
     public BinaryNode<T> search(T data) {
         // Reseta a contagem antes de iniciar a busca, se desejado medir por operação
         // resetComparisonCount(); 
@@ -50,7 +49,6 @@ public class BST<T extends Comparable<T>> extends BinaryTree<T> {
         }
     }
 
-    @Override
     public void insert(T data) {
         // Reseta a contagem antes de iniciar a inserção, se desejado medir por operação
         // resetComparisonCount(); 
@@ -60,7 +58,6 @@ public class BST<T extends Comparable<T>> extends BinaryTree<T> {
     /**
      * Insere um nó na BST.
      */
-    @Override
     protected BinaryNode<T> insert(BinaryNode<T> node, BinaryNode<T> parent, T data) {
         if (node == null) {
             node = new BinaryNode<>(data);
@@ -86,7 +83,6 @@ public class BST<T extends Comparable<T>> extends BinaryTree<T> {
         return node;
     }
 
-    @Override
     public void remove(T data) {
         // Reseta a contagem antes de iniciar a remoção, se desejado medir por operação
         // resetComparisonCount(); 
@@ -96,7 +92,6 @@ public class BST<T extends Comparable<T>> extends BinaryTree<T> {
     /**
      * Procura o nó a ser removido da BST.
      */
-    @Override
     protected BinaryNode<T> remove(BinaryNode<T> node, T data) {
         if (node == null) {
             return null;

@@ -4,9 +4,7 @@ import java.util.List;
 public class ProjetoApl2 {
 
     public static void main(String[] args) {
-        // Caminho para o arquivo CSV - **IMPORTANTE: Ajuste este caminho!**
-        // O arquivo CSV fornecido pelo usuário está em /home/ubuntu/upload/
-        String csvFilePath = "/home/ubuntu/upload/Quantidade de alunos estrangeiros por nacionalidade_2° Semestre 2023.csv";
+        String csvFilePath = "Quantidade de alunos estrangeiros por nacionalidade_2° Semestre 2023.csv";
 
         // Cria as árvores BST e AVL
         BST<NacionalidadeInfo> bst = new BST<>();
