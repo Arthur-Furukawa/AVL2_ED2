@@ -1,3 +1,5 @@
+package src;
+
 // Classe genérica que representa uma árvore binária de busca (BST).
 // Armazena nós do tipo T (definido na hora de instanciar a árvore).
 public class BST<T extends Comparable<T>> extends BinaryTree<T> {

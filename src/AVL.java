@@ -1,3 +1,5 @@
+package src;
+
 // Classe genérica que representa uma árvore (balanceada) binária de busca (AVL).
 // Armazena nós do tipo T (definido na hora de instanciar a árvore).
 public class AVL<T extends Comparable<T>> extends BST<T> {

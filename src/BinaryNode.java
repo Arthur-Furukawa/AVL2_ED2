@@ -1,3 +1,5 @@
+package src;
+
 // Classe genérica que representa um nó de uma árvore binária.
 // Armazena dados do tipo T (definido na hora de instanciar o nó).
 public class BinaryNode<T extends Comparable<T>> {

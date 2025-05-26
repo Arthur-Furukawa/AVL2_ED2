@@ -1,3 +1,5 @@
+package src;
+
 public class NacionalidadeInfo implements Comparable<NacionalidadeInfo> {
     private String nomePais;
     private int totalAlunos;
