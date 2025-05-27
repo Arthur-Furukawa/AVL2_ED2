@@ -128,7 +128,7 @@ public class BSTTree<T extends Comparable<T>> {
         System.out.println();
     }
 
-    public void preordem(AVLTreeNode<T> node) {
+    public void preordem(Node<T> node) {
         if(node != null) {
             System.out.print(node.getData() + " ");
             preordem(node.getLeft());
@@ -136,7 +136,7 @@ public class BSTTree<T extends Comparable<T>> {
         }
     }
 
-    public void emordem(AVLTreeNode<T> node) {
+    public void emordem(Node<T> node) {
         if(node != null) {
             emordem(node.getLeft());
             System.out.print(node.getData() + " ");
@@ -144,7 +144,7 @@ public class BSTTree<T extends Comparable<T>> {
         }
     }
 
-    public void posordem(AVLTreeNode<T> node) {
+    public void posordem(Node<T> node) {
         if(node != null) {
             posordem(node.getLeft());
             posordem(node.getRight());
