@@ -1,4 +1,6 @@
 package Tree;
+import java.util.Arrays;
+import java.util.Random;
 
 class BenchmarkTree {
 
@@ -74,6 +76,14 @@ class BenchmarkTree {
             current = (cmp < 0) ? current.getLeft() : current.getRight();
         }
         return false;
+    }
+
+    public static void printBenchmark(String operation, String dataType, int numElements, double bstTime, double avlTime) {
+        System.out.println("\n--- Benchmark de " + operation + " (" + dataType + ") ---");
+        System.out.printf("Número de elementos: %d%n", numElements);
+        System.out.printf("Temp BST: %.3f ms%n", bstTime);
+        System.out.printf("Tempo AVL: %.3f ms%n", avlTime);
+        System.out.println("------------------------------------");
     }
 }
 
