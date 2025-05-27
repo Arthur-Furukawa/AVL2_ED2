@@ -77,24 +77,46 @@ class BenchmarkTree {
     }
 }
 
-public class Benchmark {
+public class Benchmark { 
     public static void main(String[] args) {
-        AVLTree<Integer> avl = new AVLTree<>();
-        BSTTree<Integer> bst = new BSTTree<>();
 
-        avl.addNode(1);
-		avl.addNode(2);
-		avl.addNode(3);
-		avl.addNode(4);
-		avl.addNode(5);
-		avl.removeNode(1);
-		avl.removeNode(2);
+	// Geração de 10000 elementos aleatórios para teste de Benchmark
+        int numElements = 10000;
+        Integer[] randomData = generateRandomIntegers(numElements);
+        Integer[] searchKeys = Arrays.copyOf(randomData, randomData.length);
+        Integer[] removeKeys = Arrays.copyOf(randomData, randomData.length / 2);
+        System.out.println("Iniciando Benchmark...");
 
-        bst.addNode(1);
-		bst.addNode(2);
-		bst.addNode(3);
-		bst.addNode(4);
-		bst.removeNode(1);
-		bst.removeNode(2);
+
+	// Cria dois vetores independentes, que serão utilizados nos testes de inserção e remoção das duas árvores
+	// Ambos armazenam os valores gerados aleatoriamente que depois serão inseridos nas árvores
+        Integer[] insertDataBST = Arrays.copyOf(randomData, randomData.length);
+        Integer[] insertDataAVL = Arrays.copyOf(randomData, randomData.length);
+
+        AVLTree<Integer> avlInsert = new AVLTree<>();
+        BSTTree<Integer> bstInsert = new BSTTree<>();
+
+
+	// Teste de inserção de valores gerados aleatoriamente nas árvores BST e AVL
+        double bstInsertTime = BenchmarkTree.measureInsert(bstInsert, insertDataBST);
+        double avlInsertTime = BenchmarkTree.measureInsert(avlInsert, insertDataAVL);
+        BenchmarkTree.printBenchmark("Inserção", "Inteiros aleatórios", numElements, bstInsertTime, avlInsertTime);
+
+
+	// Teste de busca de um elemento nas árvores BST e AVL
+        double bstSearchTime = BenchmarkTree.measureSearch(bstInsert, searchKeys);
+        double avlSearchTime = BenchmarkTree.measureInsert(avlInsert, searchKeys);
+        BenchmarkTree.printBenchmark("Busca", "Inteiros aleatórios", numElements, bstSearchTime, avlSearchTime);
+    }
+
+
+    // Método para gerar os valores aleatórios utilizando a biblioteca Random
+    private static Integer[] generateRandomIntegers(int size) {
+        Integer[] data = new Integer[size];
+        Random rand = new Random();
+        for(int i = 0; i < size; i++) {
+            data[i] = rand.nextInt(size * 2);
+        }
+        return data;
     }
 }
