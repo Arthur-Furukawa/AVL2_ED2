@@ -75,4 +75,14 @@ public class BenchmarkTree {
         }
         return false;
     }
+
+    public static String formatNanos(long nanos) {
+        if (nanos > 1_000_000) { // Mais de 1 ms
+            return String.format("%.3f ms", nanos / 1_000_000.0);
+        } else if (nanos > 1_000) { // Mais de 1 microsegundo
+             return String.format("%.3f µs", nanos / 1_000.0);
+        } else {
+            return nanos + " ns";
+        }
+    }
 }
